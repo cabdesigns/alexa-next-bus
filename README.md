@@ -3,11 +3,11 @@
 An AWS Lambda function to power your Alexa Skill retrieving the next buses from your configured bus stop(s). [Read more](http://www.chrisbell.eu/bus-timetables-smart-home-alexa-node-js-aws-lambda/).
 
 ## Warning
-**⚠ USE AT YOUR OWN PERIL! ⚠**
+**⚠  USE AT YOUR OWN PERIL! ⚠**
 
 This project has been published for the educational benefit of anyone wanting to try AWS Lambda or Alexa Skills. This should not be the basis for any production applications.
 
-This project was built on Mac OS X using node.js 6. Your results may vary but support will by limited.
+This project was built on Mac OS X using node.js 6. Your results may vary but support will be limited.
 
 ## How to use
 
@@ -44,7 +44,7 @@ Paste the contents of `speechAssets/IntentSchema.json` into the Intent Schema of
 Still on the Interaction Model section, paste the contents of `speechAssets/SampleUtterances.txt` into Sample Utterances.
 
 
-###4 Build/upload/test
+### 4 Build/upload/test
 
 Run `npm run build` in order to generate a zip archive of the application.
 
