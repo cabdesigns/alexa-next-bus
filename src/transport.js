@@ -3,7 +3,7 @@
 const Promise = require('bluebird')
 const rp = require('request-promise')
 const moment = require('moment-timezone')
-const Bus = require('../src/bus')
+const Bus = require('./bus')
 
 /**
  * @param {String} appId
@@ -16,7 +16,7 @@ module.exports = function (appId, appKey) {
      * Fetch next buses and apply callback
      * @param {String[]} atcoCodes
      * @param {function} callback
-     * @todo
+     * @todo Refactor to return Promise and separate concerns.
      */
     fetchNextBuses: (atcoCodes, callback) => {
       let buses = []
@@ -86,7 +86,7 @@ module.exports = function (appId, appKey) {
    * @return {object} Moment instance
    */
   function getDateTime (bus) {
-    let departureDate = bus.expected_departure_date
+    let departureDate = bus.date
     let departureTime = bus.aimed_departure_time
     let busDateTime = `${departureDate} ${departureTime}`
     let busTime = moment.tz(busDateTime, 'Europe/London')

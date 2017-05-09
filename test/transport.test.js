@@ -65,28 +65,28 @@ describe('Transport', () => {
 })
 
 /**
- * @param {String} expectedDepartureDate YYYY-MM-DD format
+ * @param {String} date YYYY-MM-DD format
  */
-function stubBuses (expectedDepartureDate) {
+function stubBuses (date) {
   nock('https://transportapi.com')
     .get('/v3/uk/bus/stop/450011119/live.json?app_id=1234&app_key=ABCD&group=route&nextbuses=yes')
     .reply(200, {
       'departures': {
         '7': [
           {
-            'expected_departure_date': expectedDepartureDate,
+            'date': date,
             'aimed_departure_time': '18:07',
             'expected_departure_time': '18:07',
             'best_departure_estimate': '18:07'
           },
           {
-            'expected_departure_date': expectedDepartureDate,
+            'date': date,
             'aimed_departure_time': '18:55',
             'expected_departure_time': '18:56',
             'best_departure_estimate': '18:56'
           },
           {
-            'expected_departure_date': expectedDepartureDate,
+            'date': date,
             'aimed_departure_time': '19:56',
             'expected_departure_time': null,
             'best_departure_estimate': '19:56'
@@ -101,13 +101,13 @@ function stubBuses (expectedDepartureDate) {
       'departures': {
         '7A': [
           {
-            'expected_departure_date': expectedDepartureDate,
+            'date': date,
             'aimed_departure_time': '18:08',
             'expected_departure_time': '18:08',
             'best_departure_estimate': '18:08'
           },
           {
-            'expected_departure_date': expectedDepartureDate,
+            'date': date,
             'aimed_departure_time': '18:20',
             'expected_departure_time': '18:20',
             'best_departure_estimate': '18:20'
@@ -115,7 +115,7 @@ function stubBuses (expectedDepartureDate) {
         ],
         '7S': [
           {
-            'expected_departure_date': expectedDepartureDate,
+            'date': date,
             'aimed_departure_time': '18:00',
             'expected_departure_time': '18:00',
             'best_departure_estimate': '18:00'
